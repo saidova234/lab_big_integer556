@@ -1,10 +1,10 @@
 #include "big_integer.h"
 #include <iostream>
-static int cmp_abs(const std::vector<int>& a, const std::vector<int>& b) {
+static cmp_abs(const std::vector<int>& a, const std::vector<int>& b) {
  if (a.size() != b.size()) {
  return a.size() < b.size() ? -1 : 1;
  }
- for (int i = static_cast<int>(a.size()) - 1; i >= 0; --i) {
+ for int i = static_cast<int>(a.size()) - 1; i >= 0; --i) {
  if (a[static_cast<size_t>(i)] != b[static_cast<size_t>(i)]) {
  return a[static_cast<size_t>(i)] < b[static_cast<size_t>(i)] ? -1 : 1;
  }
@@ -26,7 +26,7 @@ static void add_abs(std::vector<int>& a, const std::vector<int>& b) {
  while (a.size() > 1 && a.back() == 0) {
  a.pop_back();
  }
- }
+ 
 }
 static void sub_abs(std::vector<int>& a, const std::vector<int>& b) {
  int borrow = 0;
@@ -232,7 +232,7 @@ BigInteger& BigInteger::operator+=(const BigInteger& rhs) {
  std::vector<int> temp = rhs.digits_;
  sub_abs(temp, digits_);
  digits_ = temp;
- negative_ = rhs.negative_;
+ negative_ = rhs.negative_
  }
  return *this;
 }
@@ -291,7 +291,7 @@ BigInteger& BigInteger::operator%=(const BigInteger& rhs) {
  }
  std::vector<int> divisor = rhs.digits_;
  digits_ = div_mod_abs(digits_, divisor);
- negative_ = is_zero() ? false : remainder_negative;
+ negative_ = is_zero()  false : remainder_negative;
  return *this;
 }
 BigInteger BigInteger::operator%(const BigInteger& rhs) const {
